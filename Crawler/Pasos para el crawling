@@ -1,0 +1,25 @@
+[ Clasificacion de ensamblaje ]
+
+formato de archivo
+lenguaje 
+encoding
+
+
+1.- Crawlear las urls
+
+2.- Idexar el contenido
+	* Limpiar contenido (html, pdf)
+	* Urls
+
+3.- Almacenas data
+	* Urls
+	* Text
+	* Marcas como visitado
+	* Raw
+	* ID
+
+*4.- Generar corpus
+	* ID
+	* Text
+
+*5.- Consultas
