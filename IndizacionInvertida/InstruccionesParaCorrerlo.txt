@@ -1,0 +1,4 @@
+1) bash indiza.awk corpus.txt > Modelo.log
+2) bash AND.awk Modelo.log corpus.txt test.log 
+
+

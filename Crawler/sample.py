@@ -2,6 +2,7 @@
 
 import re
 from datastorage import Stock
+from unicodedata import normalize
 
 def html_to_text(data):
 
@@ -35,11 +36,24 @@ def html_to_text(data):
 	return data
 
 db = Stock()
-
-for page in db.visit():
+pages = db.visit();
+for page in pages:
 	try:
+		if (page['html'].__len__() > 100):
+			html = page['html']
+		else:
+			html = page['text']
 
-		print html_to_text(page['html'])
+		clear_html  = re.sub('<[^<]+?>','',html)
+		normalizado = normalize('NFKD',clear_html.decode('utf-8')).encode('ASCII','ignore').lower()
+		text        = re.sub(r'[^a-zA-Z\-\ ]','',normalizado)
+		text        = re.sub(r'[-_\/]|[a-z]{13,}|\W+|[ \t]+',' ',text)
+		token       = text.split()
+		print page['_id'];
+		print token
 
 	except Exception:
 		continue
+
+
+#re.sub(r'[-_\/]|[a-z]{13,}|\W+|[ \t]+',' ',re.sub(r'[^a-zA-Z\-\ ]','',normalize('NFKD',(re.sub('<[^<]+?>','',r.content)).decode('utf-8')).encode('ASCII','ignore').lower()))

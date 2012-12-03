@@ -1,0 +1,3 @@
+1) bash indizaPosicional.awk corpusMin.txt > ModeloPosicional.log 
+2) bash sriPosicional.awk  ModeloPosicional.log corpusMin.txt testPosicional.log 
+

@@ -15,4 +15,3 @@ for page in db.visit():
 
 
 
-re.sub(r'[-_\/]|[a-z]{13,}|\W+|[ \t]+',' ',re.sub(r'[^a-zA-Z\-\ ]','',normalize('NFKD',(re.sub('<[^<]+?>','',r.content)).decode('utf-8')).encode('ASCII','ignore').lower()))

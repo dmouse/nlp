@@ -66,8 +66,7 @@ class Stock (object):
 	#
 
 	def visit(self):
-		return self.collection.find( {'$where':'this.text.length > 0 ', 'visit' : True, 'url': {'$regex' :'^(http://[a-zA-Z0-9.-]{3,15}\.cs\.buap\.mx)'} } ).limit(10)
-		#return self.collection.find({'$where':'this.text.length > 0 '})
+		return self.collection.find( {'$where':'this.text.length > 0 ', 'visit' : True, 'url': {'$regex' :'^(http://[a-zA-Z0-9.-]{3,15}\.cs\.buap\.mx)'} } )		#return self.collection.find({'$where':'this.text.length > 0 '})
 
 	#
 	#

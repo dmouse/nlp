@@ -1,0 +1,3 @@
+1) bash CentroidesTraining.awk corpus.txt > ModeloCentroides.log
+2) bash CentroidesTest.awk ModeloCentroides.log test.log
+
