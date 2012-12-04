@@ -58,7 +58,7 @@ while( stop ):
 			db.update(site)	    # updatea el url 
 			continue
 
-		text = unidecode( Spider.html2text(response.html) ) 
+		text =  Spider.html2text(response.html) 
 
 		links = Spider.get_links( response ) # obtiene la lista de links dentro del html 
 

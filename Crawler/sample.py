@@ -48,6 +48,9 @@ for page in pages:
 		normalizado = normalize('NFKD',clear_html.decode('utf-8')).encode('ASCII','ignore').lower()
 		text        = re.sub(r'[^a-zA-Z\-\ ]','',normalizado)
 		text        = re.sub(r'[-_\/]|[a-z]{13,}|\W+|[ \t]+',' ',text)
+
+		
+
 		token       = text.split()
 		print page['_id'];
 		print token

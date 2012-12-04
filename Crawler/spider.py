@@ -161,7 +161,12 @@ class Spider (object):
 
 	@staticmethod
 	def html2text( html ):
-		return html2text.html2text( unidecode(html) )
+		clear_html  = re.sub('<[^<]+?>','',html)
+		normalizado = normalize('NFKD',clear_html.decode('utf-8')).encode('ASCII','ignore').lower()
+		text        = re.sub(r'[^a-zA-Z\-\ ]','',normalizado)
+		text        = re.sub(r'[-_\/]|[a-z]{13,}|\W+|[ \t]+',' ',text)
+		return text
+		
 
 
 	#
@@ -172,5 +177,8 @@ class Spider (object):
 		return cls.absolute_url( cls.parse_links(response.html), response.url);
 	get_links = classmethod( get_links )
 
+	# /ruta.hlp
+	# ruta.html
+	# http://....
 
 

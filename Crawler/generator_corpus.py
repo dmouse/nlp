@@ -12,6 +12,4 @@ for page in db.visit():
 
 	except Exception:
 		continue
-
-
-
+		
