@@ -2,6 +2,7 @@ import re
 import html2text
 from unidecode import unidecode
 from BeautifulSoup import BeautifulSoup
+from unicodedata import normalize
 
 try:
   import requests

@@ -10,9 +10,11 @@ from unidecode import unidecode
 stop = True
 db = Stock() # instancia para almacenamiento
 
+if (not db.count()):
+	db.save_data({'visit':False,'url':''});
 
 while( stop ):
-
+	break
 	if ( not db.url() ):
 		break
 

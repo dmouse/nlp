@@ -74,3 +74,6 @@ class Stock (object):
 
 	def checksum(self,checksum):
 		return self.collection.find_one( { 'checksum' : checksum } );
+
+	def count (self):
+		return self.collection.find().count();
